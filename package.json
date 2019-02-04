@@ -1,0 +1,35 @@
+{
+  "name": "node-child-process",
+  "version": "0.0.1",
+  "description": "A NPM module to wrap around node's child process functions",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "example": "node node-example.js",
+    "watch": "nodemon node-example.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/htkoca/utils-node-child-process.git"
+  },
+  "keywords": [
+		"node",
+		"process",
+		"gulp",
+		"child",
+		"cli",
+		"bash",
+		"command",
+		"line"
+  ],
+  "author": "Tony Ko",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/htkoca/utils-node-child-process/issues"
+  },
+  "homepage": "https://github.com/htkoca/utils-node-child-process#readme",
+  "dependencies": {},
+  "devDependencies": {
+    "nodemon": "^1.18.7"
+  }
+}
