@@ -10,7 +10,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/htkoca/utils-node-child-process.git"
+    "url": "git+https://github.com/htkoca/lib-instance-control.git"
   },
   "keywords": [
 		"node",
@@ -25,9 +25,9 @@
   "author": "Tony Ko",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/htkoca/utils-node-child-process/issues"
+    "url": "https://github.com/htkoca/lib-instance-control/issues"
   },
-  "homepage": "https://github.com/htkoca/utils-node-child-process#readme",
+  "homepage": "https://github.com/htkoca/lib-instance-control#readme",
   "dependencies": {},
   "devDependencies": {
     "nodemon": "^1.18.7"

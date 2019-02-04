@@ -1,5 +1,5 @@
-# Node Instance Control
-- 🔍 Node Instance Control - A NPM module to wrap around node's child process spawn functions.
+# Instance Control
+- 🔍 Instance Control - A NPM module to wrap around node's child process spawn functions.
 - Just a wrapper to start and stop process instances.
 
 
@@ -11,14 +11,14 @@
 
 ### Prep
 Let's install the module
-- in terminal: `npm install node-instance-control`
+- in terminal: `npm install instance-control`
 
 
 ### Step 1
 Instance creation and termination
 ```js
 // dependencies
-const InstanceCtrl = require('./index.js')
+const InstanceCtrl = require('instance-control')
 
 // create new controller
 let instanceCtrl = new InstanceCtrl();
