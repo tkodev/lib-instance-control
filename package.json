@@ -1,6 +1,6 @@
 {
   "name": "node-child-process",
-  "version": "0.0.1",
+  "version": "1.0.0",
   "description": "A NPM module to wrap around node's child process functions",
   "main": "index.js",
   "scripts": {
@@ -13,14 +13,14 @@
     "url": "git+https://github.com/htkoca/lib-instance-control.git"
   },
   "keywords": [
-		"node",
-		"process",
-		"gulp",
-		"child",
-		"cli",
-		"bash",
-		"command",
-		"line"
+    "node",
+    "process",
+    "gulp",
+    "child",
+    "cli",
+    "bash",
+    "command",
+    "line"
   ],
   "author": "Tony Ko",
   "license": "MIT",
