@@ -23,6 +23,9 @@ module.exports = function(){
 
 	// get child instances
 	this.getInstances = function(childName){
+		if(!children.hasOwnProperty(childName)){
+			children[childName] = [];
+		}
 		return children[childName];
 	}
 
