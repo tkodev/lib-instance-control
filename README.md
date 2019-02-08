@@ -1,6 +1,7 @@
 # Instance Control
 - 🔍 Instance Control - A NPM module to wrap around node's child process spawn functions.
-- Just a wrapper to start and stop process instances.
+  - Just a wrapper to start and stop process instances.
+  - **Not for public production! Please fork for personal use!** - This module is for @htkoca's private development.
 
 
 ## Usage Summary

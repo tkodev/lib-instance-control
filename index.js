@@ -47,6 +47,11 @@ module.exports = function(){
 		})
 		children[childName] = Array.isArray(children[childName]) ? children[childName] : [];
 		children[childName].push(subProcess);
+		subProcess.on('exit', function(code, signal){
+			children[childName] = children[childName].filter(function(childProcess){
+				return subProcess.pid != childProcess.pid;
+			})
+		})
 		return subProcess;
 	}
 
