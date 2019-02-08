@@ -63,16 +63,17 @@ module.exports = function(){
 	}
 
 	// spawn a new child instance, killing old ones.
-	this.singleInstance = function(childName, cmd){
-		if(self.getInstances(childName).length){
-			let subProcess = self.getInstances(childName)[0];
-			subProcess.on('exit', function(code, signal){
-				self.startInstance(childName, cmd);
-			});
-			self.killInstances(childName);
-		} else {
-			self.startInstance(childName, cmd);
-		}
+	this.singleInstance = async function(childName, cmd){
+		return new Promise(function(resolve, reject) {
+			if(self.getInstances(childName).length){
+				self.getInstances(childName)[0].on('exit', function(code, signal){
+					resolve(self.startInstance(childName, cmd));
+				});
+				self.killInstances(childName);
+			} else {
+				resolve(self.startInstance(childName, cmd));
+			}
+		});
 	}
 
 	// kill all child instances

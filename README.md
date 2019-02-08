@@ -53,3 +53,15 @@ let allInstances = instanceCtrl.getAll();
 // kill all instances, returns: object with child name as property, process arrays as value
 let killStatusAll = instanceCtrl.killAll();
 ```
+
+### Step 3
+Single instance functions - promise based
+```js
+// start only one process - each command kills previous app
+(async function() {
+  let subProcess = await instanceCtrl.singleInstance('nodeApp', `node example-process.js`);
+	let subProcess2 = await instanceCtrl.singleInstance('nodeApp', `node example-process.js`);
+	let subProcess3 = await instanceCtrl.singleInstance('nodeApp', `node example-process.js`);
+	console.log(subProcess3);
+})();
+```

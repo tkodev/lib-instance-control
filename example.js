@@ -19,14 +19,15 @@ let instances = instanceCtrl.getInstances('nodeApp');
 // kill all instances under 'nodeApp' child name, returns: true if any kill signal sent
 let killStatus = instanceCtrl.killInstances('nodeApp');
 
-// start another instance to test global functions
-instanceCtrl.singleInstance('nodeApp', `node example-process.js`);
-instanceCtrl.singleInstance('nodeApp', `node example-process.js`);
-
-// console.log(instanceCtrl.getAll())
-
 // get all instances, returns: object with child name as property, process arrays as value
 let allInstances = instanceCtrl.getAll();
 
 // kill all instances, returns: object with child name as property, process arrays as value
 // let killStatusAll = instanceCtrl.killAll();
+
+// start another instance to test global functions
+(async function() {
+  let subProcess = await instanceCtrl.singleInstance('nodeApp', `node example-process.js`);
+	let subProcess2 = await instanceCtrl.singleInstance('nodeApp', `node example-process.js`);
+	let subProcess3 = await instanceCtrl.singleInstance('nodeApp', `node example-process.js`);
+})();
