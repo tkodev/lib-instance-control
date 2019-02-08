@@ -20,10 +20,13 @@ let instances = instanceCtrl.getInstances('nodeApp');
 let killStatus = instanceCtrl.killInstances('nodeApp');
 
 // start another instance to test global functions
-instanceCtrl.startInstance('nodeApp', `node example-process.js`);
+instanceCtrl.singleInstance('nodeApp', `node example-process.js`);
+instanceCtrl.singleInstance('nodeApp', `node example-process.js`);
+
+// console.log(instanceCtrl.getAll())
 
 // get all instances, returns: object with child name as property, process arrays as value
 let allInstances = instanceCtrl.getAll();
 
 // kill all instances, returns: object with child name as property, process arrays as value
-let killStatusAll = instanceCtrl.killAll();
+// let killStatusAll = instanceCtrl.killAll();

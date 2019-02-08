@@ -44,9 +44,13 @@ module.exports = function(){
 
 	// spawn a new child instance
 	this.startInstance = function(childName, cmd){
+		// console.log('starting new instance');
 		let cmdArr = self.getCommand(cmd)
 		let subProcess = spawn(cmdArr[0], cmdArr.slice(1), [], {
 			stdio: 'inherit'
+		})
+		subProcess.stdout.on('data', function(data){
+			console.log(data.toString().replace(/\n$/,""));
 		})
 		children[childName] = Array.isArray(children[childName]) ? children[childName] : [];
 		children[childName].push(subProcess);
@@ -56,6 +60,19 @@ module.exports = function(){
 			})
 		})
 		return subProcess;
+	}
+
+	// spawn a new child instance, killing old ones.
+	this.singleInstance = function(childName, cmd){
+		if(self.getInstances(childName).length){
+			let subProcess = self.getInstances(childName)[0];
+			subProcess.on('exit', function(code, signal){
+				self.startInstance(childName, cmd);
+			});
+			self.killInstances(childName);
+		} else {
+			self.startInstance(childName, cmd);
+		}
 	}
 
 	// kill all child instances
