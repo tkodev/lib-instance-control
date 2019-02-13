@@ -51,6 +51,9 @@ module.exports = function(){
 		})
 		subProcess.stdout.on('data', function(data){
 			console.log(data.toString().replace(/\n$/,""));
+    })
+    subProcess.stderr.on('data', function(data){
+			console.log(data.toString().replace(/\n$/,""));
 		})
 		children[childName] = Array.isArray(children[childName]) ? children[childName] : [];
 		children[childName].push(subProcess);
