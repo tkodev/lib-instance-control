@@ -1,6 +1,6 @@
 {
   "name": "instance-control",
-  "version": "1.0.7",
+  "version": "1.0.8",
   "description": "A NPM module to wrap around node's child process spawn functions.",
   "main": "index.js",
   "scripts": {
